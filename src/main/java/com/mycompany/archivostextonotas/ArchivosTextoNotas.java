@@ -3,6 +3,12 @@
  */
 
 package com.mycompany.archivostextonotas;
+import java.io.FileWriter;
+import java.io.PrintWriter;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
 
 /**
  *
@@ -11,6 +17,38 @@ package com.mycompany.archivostextonotas;
 public class ArchivosTextoNotas {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
-    }
-}
+        
+        // Realizamos la Escritura en el archivo
+        FileWriter fileWriter = null;
+        PrintWriter printWriter = null;
+
+        try {
+            // Usamos las clases FileWriter y PrintWriter para  el archivo mis_notas.txt
+            fileWriter = new FileWriter("mis_notas.txt");
+            printWriter = new PrintWriter(fileWriter);
+
+            // Escribimos tres notas
+            printWriter.println("Esta seman aprendi acerca de Seguridad Informatica.");
+            printWriter.println("El sol brilla para todos.");
+            printWriter.println("La perseverenacia es la clave del exito.");
+
+            System.out.println("Se ha escrito correctamente en mis_notas.txt");
+
+        } catch (IOException e) {
+            System.out.println("Ocurrió un error al escribir el archivo: " + e.getMessage());
+        } finally {
+            // Cerramos los archivos utilizando el método .close().
+            if (printWriter != null) {
+                printWriter.close();
+            }
+            try {
+                if (fileWriter != null) {
+                    fileWriter.close();
+                }
+            } catch (IOException e) {
+                System.out.println("Error al cerrar el FileWriter: " + e.getMessage());
+            }
+        }
+
+      
+        

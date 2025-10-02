@@ -1,0 +1,3 @@
+Hoy aprendí cómo manejar archivos en Java.
+La práctica con FileWriter y PrintWriter fue clara.
+Necesito repasar la sintaxis de try-catch.
