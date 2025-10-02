@@ -50,5 +50,33 @@ public class ArchivosTextoNotas {
             }
         }
 
-      
+      // Se realiza la lectura del archivo
+ 
+        BufferedReader bufferedReader = null;
+
+        try {
+            // Se Abre el archivo para lectura
+            bufferedReader = new BufferedReader(new FileReader("mis_notas.txt"));
+
+            String linea;
+            // Se lee línea por línea usando readLine()
+            while ((linea = bufferedReader.readLine()) != null) {
+                // Mostrar en consola precedido de la palabra "Nota:"
+                System.out.println("Nota: " + linea);
+            }
+
+        } catch (IOException e) {
+            System.out.println("Ocurrió un error al leer el archivo: " + e.getMessage());
+        } finally {
+            // Cerramos el archivo
+            try {
+                if (bufferedReader != null) {
+                    bufferedReader.close();
+                }
+            } catch (IOException e) {
+                System.out.println("Error al cerrar el BufferedReader: " + e.getMessage());
+            }
+        }
+    }
+}
         

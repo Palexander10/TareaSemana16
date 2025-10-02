@@ -1,3 +1,3 @@
-Hoy aprendí cómo manejar archivos en Java.
-La práctica con FileWriter y PrintWriter fue clara.
-Necesito repasar la sintaxis de try-catch.
+Esta seman aprendi acerca de Seguridad Informatica.
+El sol brilla para todos.
+La perseverenacia es la clave del exito.
